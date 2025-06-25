@@ -17,15 +17,72 @@
       max-width: 960px;
       margin: auto;
       padding: 2rem;
+      display: none; /* Hide content while loading */
     }
 
-    header {
-      text-align: center;
+    /* Spinner fan styles */
+    .loader-bg {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      background: #f8f9fa;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+    .spinner-fan {
+      width: 70px;
+      height: 70px;
+      position: relative;
+      animation: spin-fan 1s linear infinite;
+    }
+    .blade {
+      position: absolute;
+      width: 20px;
+      height: 60px;
+      background: #005792;
+      border-radius: 10px 10px 30px 30px;
+      opacity: 0.7;
+      left: 25px;
+      top: 5px;
+      transform-origin: 10px 55px;
+    }
+    .blade:nth-child(1) { transform: rotate(0deg);}
+    .blade:nth-child(2) { transform: rotate(90deg);}
+    .blade:nth-child(3) { transform: rotate(180deg);}
+    .blade:nth-child(4) { transform: rotate(270deg);}
+    @keyframes spin-fan {
+      0% { transform: rotate(0deg);}
+      100% { transform: rotate(360deg);}
+    }
+
+    /* Profile header with portrait */
+    .profile-header {
+      display: flex;
+      align-items: center;
       background-color: #005792;
       color: white;
       padding: 2rem 1rem;
       border-radius: 10px;
       margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .profile-photo img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid #e1ecf4;
+      margin-right: 2rem;
+      background: #fff;
+      display: block;
+    }
+
+    .profile-info {
+      flex: 1;
+      min-width: 220px;
     }
 
     .subtitle {
@@ -68,6 +125,15 @@
       margin-top: 1rem;
     }
 
+    .certificates-list li {
+      margin-bottom: 0.5rem;
+    }
+
+    .certificates-list a {
+      color: #005792;
+      text-decoration: underline;
+    }
+
     footer {
       text-align: center;
       font-size: 0.85rem;
@@ -75,21 +141,58 @@
       background-color: #e9ecef;
       border-top: 1px solid #ccc;
     }
+
+    /* Responsive adjustments */
+    @media (max-width: 600px) {
+      .profile-header {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+      }
+      .profile-photo img {
+        margin-bottom: 1rem;
+        margin-right: 0;
+      }
+    }
   </style>
+  <script>
+    // Show loader for 4.5 seconds before showing the site
+    window.addEventListener('DOMContentLoaded', function () {
+      setTimeout(function () {
+        document.querySelector('.loader-bg').style.display = 'none';
+        document.querySelector('.container').style.display = 'block';
+      }, 4500); // 4500 milliseconds = 4.5 seconds
+    });
+  </script>
 </head>
 <body>
+  <!-- Spinner Fan Loader -->
+  <div class="loader-bg">
+    <div class="spinner-fan">
+      <div class="blade"></div>
+      <div class="blade"></div>
+      <div class="blade"></div>
+      <div class="blade"></div>
+    </div>
+  </div>
+
   <div class="container">
-    <header>
-      <h1>Jackson Mofu</h1>
-      <p class="subtitle">BSc. Information Systems Student | Copperbelt University</p>
-      <p class="personal">
-        Age: 26 | Sex: Male | DOB: 09 March 1999<br>
-        Address: CBU, Riverside, Kitwe, Zambia
-      </p>
-      <div class="contact">
-        <a href="tel:+260970816607">📞 +260 970 816 607</a> |
-        <a href="mailto:jackson.mofu@email.com">📧 jacksonmofu2@email.com</a> |
-        <a href="https://www.linkedin.com/in/jackson-mofu-183771340" target="_blank">🔗 LinkedIn Profile</a>
+    <header class="profile-header">
+      <div class="profile-photo">
+        <!-- Replace 'profile.jpg' with your actual photo file name and upload it to your repo -->
+        <img src="profile.jpg" alt="Jackson Mofu Portrait" />
+      </div>
+      <div class="profile-info">
+        <h1>Jackson Mofu</h1>
+        <p class="subtitle">BSc. In Information Systems Student | Copperbelt University</p>
+        <p class="personal">
+          Address: CBU, Riverside, Kitwe, Zambia
+        </p>
+        <div class="contact">
+          <a href="tel:+260970816607">📞 +260 970 816 607</a> |
+          <a href="mailto:jackson.mofu@email.com">📧 jacksonmofu2@email.com</a> |
+          <a href="https://www.linkedin.com/in/jackson-mofu-183771340" target="_blank">🔗 LinkedIn Profile</a>
+        </div>
       </div>
     </header>
 
@@ -140,9 +243,18 @@
 
     <section>
       <h2>Certifications</h2>
-      <ul>
-        <li>Introduction to Cybersecurity – Cisco Networking Academy</li>
-        <li>Web Development Fundamentals – Coursera</li>
+      <ul class="certificates-list">
+        <li>
+          <a href="certificates/cybersecurity.pdf" target="_blank">
+            📝 Introduction to Cybersecurity – Cisco Networking Academy (PDF)
+          </a>
+        </li>
+        <li>
+          <a href="certificates/web-development.pdf" target="_blank">
+            📝 Web Development Fundamentals – Coursera (PDF)
+          </a>
+        </li>
+        <!-- Add more certificate links as needed -->
       </ul>
     </section>
 
