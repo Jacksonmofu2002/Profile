@@ -6,7 +6,6 @@
   <title>Jackson Mofu | Profile</title>
   <style>
     body {
-      /* A modern dark blue gradient background for a professional look */
       background: linear-gradient(135deg, #0a2740 0%, #005792 100%);
       color: #f4f8fb;
       margin: 0;
@@ -15,8 +14,6 @@
       width: 100vw;
       box-sizing: border-box;
     }
-
-    /* Center the container both vertically and horizontally */
     .container {
       max-width: 900px;
       margin: 40px auto;
@@ -24,14 +21,11 @@
       border-radius: 16px;
       box-shadow: 0 6px 32px rgba(0,0,0,0.21);
       padding: 2.3rem 1.2rem 2.3rem 1.2rem;
-      display: none; /* Hide content while loading */
-      /* Center with flex for vertical alignment on tall screens */
       display: flex;
       flex-direction: column;
       align-items: center;
+      display: none;
     }
-
-    /* Spinner fan styles */
     .loader-bg {
       position: fixed;
       top: 0; left: 0;
@@ -67,8 +61,6 @@
       0% { transform: rotate(0deg);}
       100% { transform: rotate(360deg);}
     }
-
-    /* Profile header with portrait */
     .profile-header {
       display: flex;
       align-items: center;
@@ -82,7 +74,6 @@
       flex-wrap: wrap;
       box-shadow: 0 4px 18px rgba(25,195,226,0.07);
     }
-
     .profile-photo img {
       width: 130px;
       height: 130px;
@@ -94,23 +85,19 @@
       display: block;
       box-shadow: 0 2px 8px rgba(25,195,226,0.12);
     }
-
     .profile-info {
       flex: 1;
       min-width: 220px;
     }
-
     .subtitle {
       font-size: 1.13rem;
       margin-top: 0.5rem;
       color: #d3eefd;
     }
-
     .personal {
       margin-top: 1rem;
       font-size: 0.99rem;
     }
-
     .contact a {
       color: #fff;
       text-decoration: none;
@@ -121,19 +108,16 @@
     .contact a:hover {
       color: #19c3e2;
     }
-
     section {
       margin-bottom: 2rem;
       width: 100%;
     }
-
     h2 {
       color: #19c3e2;
       border-bottom: 2px solid #19c3e2;
       padding-bottom: 0.3rem;
       margin-bottom: 1rem;
     }
-
     .skills li {
       display: inline-block;
       background-color: #173e5e;
@@ -143,15 +127,12 @@
       margin: 0.3rem 0.3rem 0.3rem 0;
       font-size: 0.98rem;
     }
-
     .project {
       margin-top: 1rem;
     }
-
     .certificates-list li {
       margin-bottom: 0.6rem;
     }
-
     .certificates-list a {
       color: #19c3e2;
       text-decoration: underline;
@@ -161,7 +142,6 @@
       color: #fff;
       text-decoration: underline;
     }
-
     footer {
       text-align: center;
       font-size: 0.95rem;
@@ -171,8 +151,6 @@
       width: 100%;
       color: #d3eefd;
     }
-
-    /* Responsive adjustments */
     @media (max-width: 750px) {
       .container {
         max-width: 98vw;
@@ -201,7 +179,6 @@
         padding-right: 0.2rem;
       }
     }
-
     @media (max-width: 470px) {
       .container {
         max-width: 100vw;
@@ -228,12 +205,11 @@
     }
   </style>
   <script>
-    // Show loader for 4.5 seconds before showing the site
     window.addEventListener('DOMContentLoaded', function () {
       setTimeout(function () {
         document.querySelector('.loader-bg').style.display = 'none';
         document.querySelector('.container').style.display = 'flex';
-      }, 4500); // 4500 milliseconds = 4.5 seconds
+      }, 4500);
     });
   </script>
 </head>
@@ -251,7 +227,6 @@
   <div class="container">
     <header class="profile-header">
       <div class="profile-photo">
-        <!-- Replace 'profile.jpg' with your actual photo file name and upload it to your repo -->
         <img src="profile.jpg" alt="Jackson Mofu Portrait" />
       </div>
       <div class="profile-info">
@@ -281,8 +256,14 @@
       <p><strong>Copperbelt University, Zambia</strong><br>
       BSc in Information Systems (Expected 2026)</p>
       <ul>
-        <li>Courses: DB Systems, Web Tech, Security, Software Engineering</li>
-        <li>Final Year Project: [Insert Title]</li>
+        <h3>Courses </h3>
+        <li>Web Design & Mobile Technologies.</li>
+        <li>Data Mining and Business Analytics.</li>
+        <li>Object-Oriented Systems Analysis and Design.</li> 
+        <li>E-commerce and ERP Systems.</li>
+        <li>Information Systems Project Management.</li>
+        <li>Research Methods.</li>
+        <li>Systems Security and Quality Assurance</li>
       </ul>
     </section>
 
@@ -321,20 +302,14 @@
             📝 Professional Documents for your reference here (PDF)
           </a>
         </li>
-        <li>
-<!--           <a href="certificates/web-development.pdf" target="_blank">
-            📝 Web Development Fundamentals – Coursera (PDF)
-          </a> -->
-        </li>
-        <!-- Add more certificate links as needed -->
       </ul>
     </section>
 
     <section>
       <h2>Activities</h2>
       <ul>
-        <li>ICT Club – Coding competitions, workshops, tech talks</li>
-        <li>Tech for Change – Volunteered to teach basic IT skills in local schools</li>
+        <li>Programming Club experiencing various languages</li>
+        <li>ICTAZ SOCIETY - Performing hands-on various project proposals </li>
       </ul>
     </section>
 
