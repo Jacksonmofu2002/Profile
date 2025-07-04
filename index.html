@@ -25,7 +25,6 @@
       flex-direction: column;
       align-items: center;
       display: none;
-      /* Add a little shadow for mobile separation */
     }
     .loader-bg {
       position: fixed;
@@ -143,6 +142,37 @@
       color: #fff;
       text-decoration: underline;
     }
+    .references-list {
+      margin-top: 1rem;
+      padding-left: 0.2rem;
+    }
+    .reference-card {
+      background: rgba(25,195,226,0.07);
+      border-left: 4px solid #19c3e2;
+      border-radius: 8px;
+      margin-bottom: 1.1rem;
+      padding: 0.9rem 1.2rem;
+      color: #e3f6ff;
+      box-shadow: 0 2px 8px rgba(25,195,226,0.06);
+    }
+    .reference-card strong {
+      color: #19c3e2;
+      font-size: 1.09rem;
+    }
+    .reference-card .ref-position {
+      font-style: italic;
+      color: #a4e0f9;
+    }
+    .reference-card .ref-contact a,
+    .reference-card .ref-contact {
+      color: #fff;
+      text-decoration: none;
+      margin-right: 0.8em;
+    }
+    .reference-card .ref-contact a:hover {
+      color: #19c3e2;
+      text-decoration: underline;
+    }
     footer {
       text-align: center;
       font-size: 0.95rem;
@@ -152,7 +182,6 @@
       width: 100%;
       color: #d3eefd;
     }
-    /* Responsive: improve container side padding and header padding on small screens */
     @media (max-width: 900px) {
       .container {
         margin: 20px 10px;
@@ -262,19 +291,19 @@
     </section>
 
     <section>
-  <h2>Education</h2>
-  <p><strong>Copperbelt University, Zambia</strong><br>
-  BSc in Information Systems (Expected 2026)</p>
-  <ul>
-    <li>Web Design & Mobile Technologies</li>
-    <li>Data Mining and Business Analytics</li>
-    <li>Object-Oriented Systems Analysis and Design</li>
-    <li>E-commerce and ERP Systems</li>
-    <li>Information Systems Project Management</li>
-    <li>Research Methods</li>
-    <li>Systems Security and Quality Assurance</li>
-  </ul>
-</section>
+      <h2>Education</h2>
+      <p><strong>Copperbelt University, Zambia</strong><br>
+      BSc in Information Systems (Expected 2026)</p>
+      <ul>
+        <li>Web Design & Mobile Technologies</li>
+        <li>Data Mining and Business Analytics</li>
+        <li>Object-Oriented Systems Analysis and Design</li>
+        <li>E-commerce and ERP Systems</li>
+        <li>Information Systems Project Management</li>
+        <li>Research Methods</li>
+        <li>Systems Security and Quality Assurance</li>
+      </ul>
+    </section>
     <section>
       <h2>Technical Skills</h2>
       <ul class="skills">
@@ -319,6 +348,27 @@
         <li>Programming Club experiencing various languages</li>
         <li>ICTAZ SOCIETY - Performing hands-on various project proposals </li>
       </ul>
+    </section>
+
+    <section>
+      <h2>References</h2>
+      <div class="references-list">
+        <div class="reference-card">
+          <strong>Sipiwer Chihana</strong><br>
+          <span class="ref-position">Lecturer, School of Information and Technology (SICT)</span><br>
+          <span class="ref-contact">📞 0976028615 | ✉️ <a href="mailto:sipiwe.chihana@cbu.ac.zm">sipiwe.chihana@cbu.ac.zm</a></span>
+        </div>
+        <div class="reference-card">
+          <strong>Dr. Alice P. Shemi</strong><br>
+          <span class="ref-position">Lecturer</span><br>
+          <span class="ref-contact">📞 0976347322</span>
+        </div>
+        <div class="reference-card">
+          <strong>Professor Mbale</strong><br>
+          <span class="ref-position">Lecturer</span><br>
+          <span class="ref-contact">📞 0967000116</span>
+        </div>
+      </div>
     </section>
 
     <footer>
